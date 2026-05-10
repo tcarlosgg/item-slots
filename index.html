@@ -24,12 +24,28 @@
 			<div id="cape" class="img" style="background-image:url(images/cape.png)"></div>
 			<div id="head" class="img" style="background-image:url(images/head.png)"></div>
 			<div id="eyes" class="img" style="background-image:url(images/eyes.png)"></div>
+
+			<div class="buttonContainer">
+				<input class="skinButton" type="button" style="background-color: #ffffff;" onclick="skinColor(0)">
+				<input class="skinButton" type="button" style="background-color: #fed3ba;" onclick="skinColor(1)">
+				<input class="skinButton" type="button" style="background-color: #da9870;" onclick="skinColor(2)">
+				<input class="skinButton" type="button" style="background-color: #996343;" onclick="skinColor(3)">
+				<input class="skinButton" type="button" style="background-color: #572f17;" onclick="skinColor(4)">
+				<input class="skinButton" type="button" style="background-color: #64fd4d;" onclick="skinColor(5)">
+				<input class="skinButton" type="button" style="background-color: #fd4d4f;" onclick="skinColor(6)">
+				<input class="skinButton" type="button" style="background-color: #febaee;" onclick="skinColor(7)">
+				<input class="skinButton" type="button" style="background-color: #8a82c8;" onclick="skinColor(8)">
+				<input class="skinButton" type="button" style="background-color: #262626;" onclick="skinColor(9)">
+			</div>
 		</div>
 
 		<div class="right">
-			<div class="itemBox">
-				<p class="itemTitle">Cabeza</p>
-				<input id="headName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="on" onblur="updateEquip('head'); setCookie('headName')"><br>
+			<div class="itemBox">		<!-- Head -->
+				<div class="titleBox">
+					<p class="itemTitle">Cabeza</p>
+					<p class="itemFlavor">Casco, sombrero, corona...</p>
+				</div>
+				<input id="headName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="off" onblur="updateEquip('head'); setCookie('headName')"><br>
 				<textarea id="headDesc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('headDesc')"></textarea><br>
 				<input name="headType"	id="headTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('head'); setCookie('headType', 'headTypeMundane')"		checked><label for="headTypeMundane"	>Mundano</label>
 				<input name="headType"	id="headTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('head'); setCookie('headType', 'headTypeMasterwork')">			<label for="headTypeMasterwork"	>Obra maestra</label>
@@ -37,16 +53,152 @@
 				<input name="headType"	id="headTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('head'); setCookie('headType', 'headTypeArtifact')">			<label for="headTypeArtifact"	>Artefacto</label>
 			</div>
 
-			<p>B</p>
-			<p>B</p>
-			<p>B</p>
-			<p>B</p>
-			<p>B</p>
-			<p>B</p>
-			<p>B</p>
-			<p>B</p>
-			<p>B</p>
-		</div>
+			<div class="itemBox">		<!-- Eyes -->
+				<div class="titleBox">
+					<p class="itemTitle">Ojos</p>
+					<p class="itemFlavor">Lentes, gafas...</p>
+				</div>
+				<input id="eyesName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="off" onblur="updateEquip('eyes'); setCookie('eyesName')"><br>
+				<textarea id="eyesDesc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('eyesDesc')"></textarea><br>
+				<input name="eyesType"	id="eyesTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('eyes'); setCookie('eyesType', 'eyesTypeMundane')"		checked><label for="eyesTypeMundane"	>Mundano</label>
+				<input name="eyesType"	id="eyesTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('eyes'); setCookie('eyesType', 'eyesTypeMasterwork')">			<label for="eyesTypeMasterwork"	>Obra maestra</label>
+				<input name="eyesType"	id="eyesTypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('eyes'); setCookie('eyesType', 'eyesTypeMagic')">				<label for="eyesTypeMagic"		>Mágico</label>
+				<input name="eyesType"	id="eyesTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('eyes'); setCookie('eyesType', 'eyesTypeArtifact')">			<label for="eyesTypeArtifact"	>Artefacto</label>
+			</div>
+			
+			<div class="itemBox">		<!-- Neck -->
+				<div class="titleBox">
+					<p class="itemTitle">Cuello</p>
+					<p class="itemFlavor">Colgante, amuleto, medallón, collar...</p>
+				</div>
+				<input id="neckName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="off" onblur="updateEquip('neck'); setCookie('neckName')"><br>
+				<textarea id="neckDesc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('neckDesc')"></textarea><br>
+				<input name="neckType"	id="neckTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('neck'); setCookie('neckType', 'neckTypeMundane')"		checked><label for="neckTypeMundane"	>Mundano</label>
+				<input name="neckType"	id="neckTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('neck'); setCookie('neckType', 'neckTypeMasterwork')">			<label for="neckTypeMasterwork"	>Obra maestra</label>
+				<input name="neckType"	id="neckTypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('neck'); setCookie('neckType', 'neckTypeMagic')">				<label for="neckTypeMagic"		>Mágico</label>
+				<input name="neckType"	id="neckTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('neck'); setCookie('neckType', 'neckTypeArtifact')">			<label for="neckTypeArtifact"	>Artefacto</label>
+			</div>
+			
+			<div class="itemBox">		<!-- Cape -->
+				<div class="titleBox">
+					<p class="itemTitle">Espalda</p>
+					<p class="itemFlavor">Capa, manto, capucha...</p>
+				</div>
+				<input id="capeName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="off" onblur="updateEquip('cape'); setCookie('capeName')"><br>
+				<textarea id="capeDesc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('capeDesc')"></textarea><br>
+				<input name="capeType"	id="capeTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('cape'); setCookie('capeType', 'capeTypeMundane')"		checked><label for="capeTypeMundane"	>Mundano</label>
+				<input name="capeType"	id="capeTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('cape'); setCookie('capeType', 'capeTypeMasterwork')">			<label for="capeTypeMasterwork"	>Obra maestra</label>
+				<input name="capeType"	id="capeTypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('cape'); setCookie('capeType', 'capeTypeMagic')">				<label for="capeTypeMagic"		>Mágico</label>
+				<input name="capeType"	id="capeTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('cape'); setCookie('capeType', 'capeTypeArtifact')">			<label for="capeTypeArtifact"	>Artefacto</label>
+			</div>
+			
+			<div class="itemBox">		<!-- Armor -->
+				<div class="titleBox">
+					<p class="itemTitle">Cuerpo</p>
+					<p class="itemFlavor">Armadura, túnica...</p>
+				</div>
+				<input id="armorName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="off" onblur="updateEquip('armor'); setCookie('armorName')"><br>
+				<textarea id="armorDesc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('armorDesc')"></textarea><br>
+				<input name="armorType"	id="armorTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('armor'); setCookie('armorType', 'armorTypeMundane')"		checked><label for="armorTypeMundane"	>Mundano</label>
+				<input name="armorType"	id="armorTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('armor'); setCookie('armorType', 'armorTypeMasterwork')">		<label for="armorTypeMasterwork">Obra maestra</label>
+				<input name="armorType"	id="armorTypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('armor'); setCookie('armorType', 'armorTypeMagic')">				<label for="armorTypeMagic"		>Mágico</label>
+				<input name="armorType"	id="armorTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('armor'); setCookie('armorType', 'armorTypeArtifact')">			<label for="armorTypeArtifact"	>Artefacto</label>
+			</div>
+			
+			<div class="itemBox">		<!-- Shirt -->
+				<div class="titleBox">
+					<p class="itemTitle">Torso</p>
+					<p class="itemFlavor">Ropajes, camisa, chaleco...</p>
+				</div>
+				<input id="shirtName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="off" onblur="updateEquip('shirt'); setCookie('shirtName')"><br>
+				<textarea id="shirtDesc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('shirtDesc')"></textarea><br>
+				<input name="shirtType"	id="shirtTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('shirt'); setCookie('shirtType', 'shirtTypeMundane')"		checked><label for="shirtTypeMundane"	>Mundano</label>
+				<input name="shirtType"	id="shirtTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('shirt'); setCookie('shirtType', 'shirtTypeMasterwork')">		<label for="shirtTypeMasterwork">Obra maestra</label>
+				<input name="shirtType"	id="shirtTypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('shirt'); setCookie('shirtType', 'shirtTypeMagic')">				<label for="shirtTypeMagic"		>Mágico</label>
+				<input name="shirtType"	id="shirtTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('shirt'); setCookie('shirtType', 'shirtTypeArtifact')">			<label for="shirtTypeArtifact"	>Artefacto</label>
+			</div>
+			
+			<div class="itemBox">		<!-- Arms -->
+				<div class="titleBox">
+					<p class="itemTitle">Brazos</p>
+					<p class="itemFlavor">Brazales, brazaletes, muñequeras...</p>
+				</div>
+				<input id="armsName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="off" onblur="updateEquip('arms'); setCookie('armsName')"><br>
+				<textarea id="armsDesc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('armsDesc')"></textarea><br>
+				<input name="armsType"	id="armsTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('arms'); setCookie('armsType', 'armsTypeMundane')"		checked><label for="armsTypeMundane"	>Mundano</label>
+				<input name="armsType"	id="armsTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('arms'); setCookie('armsType', 'armsTypeMasterwork')">			<label for="armsTypeMasterwork"	>Obra maestra</label>
+				<input name="armsType"	id="armsTypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('arms'); setCookie('armsType', 'armsTypeMagic')">				<label for="armsTypeMagic"		>Mágico</label>
+				<input name="armsType"	id="armsTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('arms'); setCookie('armsType', 'armsTypeArtifact')">			<label for="armsTypeArtifact"	>Artefacto</label>
+			</div>
+			
+			<div class="itemBox">		<!-- Hands -->
+				<div class="titleBox">
+					<p class="itemTitle">Manos</p>
+					<p class="itemFlavor">Guantes, guanteletes...</p>
+				</div>
+				<input id="handsName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="off" onblur="updateEquip('hands'); setCookie('handsName')"><br>
+				<textarea id="handsDesc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('handsDesc')"></textarea><br>
+				<input name="handsType"	id="handsTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('hands'); setCookie('handsType', 'handsTypeMundane')"		checked><label for="handsTypeMundane"	>Mundano</label>
+				<input name="handsType"	id="handsTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('hands'); setCookie('handsType', 'handsTypeMasterwork')">		<label for="handsTypeMasterwork">Obra maestra</label>
+				<input name="handsType"	id="handsTypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('hands'); setCookie('handsType', 'handsTypeMagic')">				<label for="handsTypeMagic"		>Mágico</label>
+				<input name="handsType"	id="handsTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('hands'); setCookie('handsType', 'handsTypeArtifact')">			<label for="handsTypeArtifact"	>Artefacto</label>
+			</div>
+			
+			<div class="itemBox">		<!-- Ring 1 -->
+				<div class="titleBox">
+					<p class="itemTitle">Dedo</p>
+					<p class="itemFlavor">Anillo</p>
+				</div>
+				<input id="ring1Name" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="off" onblur="updateEquip('ring1'); setCookie('ring1Name')"><br>
+				<textarea id="ring1Desc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('ring1Desc')"></textarea><br>
+				<input name="ring1Type"	id="ring1TypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('ring1'); setCookie('ring1Type', 'ring1TypeMundane')"		checked><label for="ring1TypeMundane"	>Mundano</label>
+				<input name="ring1Type"	id="ring1TypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('ring1'); setCookie('ring1Type', 'ring1TypeMasterwork')">		<label for="ring1TypeMasterwork">Obra maestra</label>
+				<input name="ring1Type"	id="ring1TypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('ring1'); setCookie('ring1Type', 'ring1TypeMagic')">				<label for="ring1TypeMagic"		>Mágico</label>
+				<input name="ring1Type"	id="ring1TypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('ring1'); setCookie('ring1Type', 'ring1TypeArtifact')">			<label for="ring1TypeArtifact"	>Artefacto</label>
+			</div>
+			
+			<div class="itemBox">		<!-- Ring 2 -->
+				<div class="titleBox">
+					<p class="itemTitle">Dedo</p>
+					<p class="itemFlavor">Anillo</p>
+				</div>
+				<input id="ring2Name" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="off" onblur="updateEquip('ring2'); setCookie('ring2Name')"><br>
+				<textarea id="ring2Desc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('ring2Desc')"></textarea><br>
+				<input name="ring2Type"	id="ring2TypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('ring2'); setCookie('ring2Type', 'ring2TypeMundane')"		checked><label for="ring2TypeMundane"	>Mundano</label>
+				<input name="ring2Type"	id="ring2TypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('ring2'); setCookie('ring2Type', 'ring2TypeMasterwork')">		<label for="ring2TypeMasterwork">Obra maestra</label>
+				<input name="ring2Type"	id="ring2TypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('ring2'); setCookie('ring2Type', 'ring2TypeMagic')">				<label for="ring2TypeMagic"		>Mágico</label>
+				<input name="ring2Type"	id="ring2TypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('ring2'); setCookie('ring2Type', 'ring2TypeArtifact')">			<label for="ring2TypeArtifact"	>Artefacto</label>
+			</div>
 
+			<div class="itemBox">		<!-- Belt -->
+				<div class="titleBox">
+					<p class="itemTitle">Cintura</p>
+					<p class="itemFlavor">Cinturón</p>
+				</div>
+				<input id="beltName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="off" onblur="updateEquip('belt'); setCookie('beltName')"><br>
+				<textarea id="beltDesc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('beltDesc')"></textarea><br>
+				<input name="beltType"	id="beltTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('belt'); setCookie('beltType', 'beltTypeMundane')"		checked><label for="beltTypeMundane"	>Mundano</label>
+				<input name="beltType"	id="beltTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('belt'); setCookie('beltType', 'beltTypeMasterwork')">			<label for="beltTypeMasterwork"	>Obra maestra</label>
+				<input name="beltType"	id="beltTypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('belt'); setCookie('beltType', 'beltTypeMagic')">				<label for="beltTypeMagic"		>Mágico</label>
+				<input name="beltType"	id="beltTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('belt'); setCookie('beltType', 'beltTypeArtifact')">			<label for="beltTypeArtifact"	>Artefacto</label>
+			</div>
+
+			<div class="itemBox">		<!-- Boots -->
+				<div class="titleBox">
+					<p class="itemTitle">Pies</p>
+					<p class="itemFlavor">Zapatos, botas, sandalias...</p>
+				</div>
+				<input id="bootsName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="off" onblur="updateEquip('boots'); setCookie('bootsName')"><br>
+				<textarea id="bootsDesc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('bootsDesc')"></textarea><br>
+				<input name="bootsType"	id="bootsTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('boots'); setCookie('bootsType', 'bootsTypeMundane')"		checked><label for="bootsTypeMundane"	>Mundano</label>
+				<input name="bootsType"	id="bootsTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('boots'); setCookie('bootsType', 'bootsTypeMasterwork')">		<label for="bootsTypeMasterwork">Obra maestra</label>
+				<input name="bootsType"	id="bootsTypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('boots'); setCookie('bootsType', 'bootsTypeMagic')">				<label for="bootsTypeMagic"		>Mágico</label>
+				<input name="bootsType"	id="bootsTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('boots'); setCookie('bootsType', 'bootsTypeArtifact')">			<label for="bootsTypeArtifact"	>Artefacto</label>
+			</div>
+			
+			</br>
+			</br>
+			</br>
+		</div>
 	</body>
 </html>

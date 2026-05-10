@@ -1,5 +1,17 @@
 function updateAll(){
     updateValues("head");
+    updateValues("eyes");
+    updateValues("neck");
+    updateValues("cape");
+    updateValues("armor");
+    updateValues("shirt");
+    updateValues("hands");
+    updateValues("arms");
+    updateValues("ring1");
+    updateValues("ring2");
+    updateValues("belt");
+    updateValues("boots");
+    skinColor(getCookie("skin"));
 }
 
 function updateValues(equip){
@@ -51,8 +63,46 @@ function updateEquip(equip){
     }
 }
 
+function skinColor(sColor){
+    document.getElementById("baseBody").style.filter="brightness(100%)";
+    switch (sColor){
+        case 0:
+        default:
+            document.getElementById("baseBody").style.backgroundImage="url(images/body.png)";
+            break;
+        case 1:
+            document.getElementById("baseBody").style.backgroundImage="url(images/body1.png)";
+            break;
+        case 2:
+            document.getElementById("baseBody").style.backgroundImage="url(images/body2.png)";
+            break;
+        case 3:
+            document.getElementById("baseBody").style.backgroundImage="url(images/body3.png)";
+            break;
+        case 4:
+            document.getElementById("baseBody").style.backgroundImage="url(images/body4.png)";
+            break;
+        case 5:
+            document.getElementById("baseBody").style.backgroundImage="url(images/body5.png)";
+            break;
+        case 6:
+            document.getElementById("baseBody").style.backgroundImage="url(images/body6.png)";
+            break;
+        case 7:
+            document.getElementById("baseBody").style.backgroundImage="url(images/body7.png)";
+            break;
+        case 8:
+            document.getElementById("baseBody").style.backgroundImage="url(images/body8.png)";
+            break;
+        case 9:
+            document.getElementById("baseBody").style.backgroundImage="url(images/body.png)";
+            document.getElementById("baseBody").style.filter="brightness(15%)";
+            break;
+    }
+    skinCookie(sColor);
+}
 
-
+//Cookie stuff
 function setCookie(cookieName, radioId = cookieName){
     if (radioId != cookieName || document.getElementById(cookieName).value != ""){
         const expiry = new Date();
@@ -62,6 +112,12 @@ function setCookie(cookieName, radioId = cookieName){
     } else {
         removeCookie(cookieName);
     }
+}
+
+function skinCookie(skin){
+    const expiry = new Date();
+    expiry.setTime(expiry.getTime() + (3*365*30*24*60*60*1000));
+    document.cookie = "skin="+ skin +"; expires="+ expiry +"; path=/";
 }
 
 function removeCookie(cookieName){

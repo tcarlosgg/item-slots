@@ -16,8 +16,10 @@ body{
     display:inline-block;
 }
 
+/* Left side: */
 .frame{
-    border: 20px inset lightgray;
+    border: 20px inset darkgray;
+    background-color: lightgray;
     min-width: 680px;
     max-width: 680px;
     min-height: 680px;
@@ -40,8 +42,23 @@ body{
     display:block
 }
 
+.buttonContainer{
+    font-size: 0pt;
+}
+
+.skinButton{
+    width:20px;
+    height:20px;
+    border: 0 none black;
+}
+
+/* Right side: */
 .itemBox{
     width:100%;
+}
+
+.titleBox{
+    display:flex;
 }
 
 .itemTitle{
@@ -49,16 +66,14 @@ body{
     margin-bottom: 0.25em;
 }
 
-.itemName{
-
+.itemFlavor{
+    color:rgb(180, 180, 180);
+    margin-left: 1em;
+    margin-bottom: 0.25em;
 }
 
 .itemDesc{
     width:100%;
     resize:none;
     height:5em;
-}
-
-.itemType{
-
 }
