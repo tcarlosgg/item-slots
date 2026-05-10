@@ -11,7 +11,7 @@ function updateAll(){
     updateValues("ring2");
     updateValues("belt");
     updateValues("boots");
-    skinColor(getCookie("skin"));
+    skinColor(parseInt(getCookie("skin")));
 }
 
 function updateValues(equip){
