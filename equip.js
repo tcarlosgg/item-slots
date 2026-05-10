@@ -11,9 +11,6 @@ function updateValues(equip){
     document.getElementById(equip +"TypeMagic").checked = false;
     document.getElementById(equip +"TypeArtifact").checked = false;
     switch (getCookie(equip +"Type")){
-        case "0":
-            document.getElementById(equip +"TypeMundane").checked = true;
-            break;
         case "1":
             document.getElementById(equip +"TypeMasterwork").checked = true;
             break;
@@ -22,6 +19,10 @@ function updateValues(equip){
             break;
         case "3":
             document.getElementById(equip +"TypeArtifact").checked = true;
+            break;
+        case "0":
+        default:
+            document.getElementById(equip +"TypeMundane").checked = true;
             break;
     }
     updateEquip(equip);
