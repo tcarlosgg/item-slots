@@ -52,22 +52,15 @@ function updateEquip(equip){
 
 
 
-function setCookie(cookieName){
+function setCookie(cookieName, radioId = cookieName){
     if (document.getElementById(cookieName).value != ""){
         const expiry = new Date();
         expiry.setTime(expiry.getTime() + (3*365*30*24*60*60*1000));
         
-        document.cookie = cookieName +"="+ document.getElementById(cookieName).value +"; expires="+ expiry +"; path=/";
+        document.cookie = cookieName +"="+ document.getElementById(radioId).value +"; expires="+ expiry +"; path=/";
     } else {
         removeCookie(cookieName);
     }
-}
-
-function setCookie(cookieName, radioId){
-    const expiry = new Date();
-    expiry.setTime(expiry.getTime() + (3*365*30*24*60*60*1000));
-    
-    document.cookie = cookieName +"="+ document.getElementById(radioId).value +"; expires="+ expiry +"; path=/";
 }
 
 function removeCookie(cookieName){
