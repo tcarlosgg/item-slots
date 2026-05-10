@@ -1,6 +1,30 @@
 function updateAll(){
-    document.getElementById("headName").value = getCookie("headName");
-    updateEquip("head");
+    updateValues(head)
+}
+
+function updateValues(equip){
+    document.getElementById(equip +"Name").value = getCookie(equip +"Name");
+    document.getElementById(equip +"Desc").value = getCookie(equip +"Desc");
+    
+    document.getElementById(equip +"TypeMundane").checked = false;
+    document.getElementById(equip +"TypeMasterwork").checked = false;
+    document.getElementById(equip +"TypeMagic").checked = false;
+    document.getElementById(equip +"TypeArtifact").checked = false;
+    switch (getCookie(equip +"Type")){
+        case "0":
+            document.getElementById(equip +"TypeMundane").checked = true;
+            break;
+        case "1":
+            document.getElementById(equip +"TypeMasterwork").checked = true;
+            break;
+        case "2":
+            document.getElementById(equip +"TypeMagic").checked = true;
+            break;
+        case "3":
+            document.getElementById(equip +"TypeArtifact").checked = true;
+            break;
+    }
+    updateEquip(equip);
 }
 
 function updateEquip(equip){
@@ -20,18 +44,39 @@ function updateEquip(equip){
                 document.getElementById(equip).style.filter="hue-rotate(145deg) brightness(95%) contrast(120%)";
                 break;
         }
-        const expiry = new Date();
-        expiry.setTime(expiry.getTime() + (3*365*30*24*60*60*1000));
-        document.cookie = ""+ equip +"Name="+ document.getElementById(equip +"Name").value +"; expires="+ expiry +"; path=/";
+
     } else {
         document.getElementById(equip).style.display = "none";
-        document.cookie = ""+ equip +"Name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
     }
-    alert("En la cabeza llevas un " + getCookie(equip+"Name"));
 }
 
-function getCookie(cname) {
-  let name = cname + "=";
+
+
+function setCookie(cookieName){
+    if (document.getElementById(cookieName).value != ""){
+        const expiry = new Date();
+        expiry.setTime(expiry.getTime() + (3*365*30*24*60*60*1000));
+        
+        document.cookie = cookieName +"="+ document.getElementById(cookieName).value +"; expires="+ expiry +"; path=/";
+    } else {
+        removeCookie(cookieName);
+    }
+}
+
+function setCookie(cookieName, radioId){
+    const expiry = new Date();
+    expiry.setTime(expiry.getTime() + (3*365*30*24*60*60*1000));
+    
+    document.cookie = cookieName +"="+ document.getElementById(radioId).value +"; expires="+ expiry +"; path=/";
+}
+
+function removeCookie(cookieName){
+    document.cookie = cookieName +"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+}
+
+
+function getCookie(cookieName) {
+  let name = cookieName + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
   for(let i = 0; i <ca.length; i++) {

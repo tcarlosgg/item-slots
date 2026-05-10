@@ -29,12 +29,12 @@
 		<div class="right">
 			<div class="itemBox">
 				<p class="itemTitle">Cabeza</p>
-				<input id="headName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="on" onblur="updateEquip('head')"><br>
-				<textarea id="headDesc" class="itemDesc" maxlength="196" placeholder="Descripción"></textarea><br>
-				<input name="headType"	id="headTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('head')"	checked><label for="headTypeMundane"	>Mundano</label>
-				<input name="headType"	id="headTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('head')">			<label for="headTypeMasterwork"	>Obra maestra</label>
-				<input name="headType"	id="headTypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('head')">			<label for="headTypeMagic"		>Mágico</label>
-				<input name="headType"	id="headTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('head')">			<label for="headTypeArtifact"	>Artefacto</label>
+				<input id="headName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="on" onblur="updateEquip('head'); setCookie('headName')"><br>
+				<textarea id="headDesc" class="itemDesc"		maxlength="196"		placeholder="Descripción"	onblur="setCookie('headDesc')"></textarea><br>
+				<input name="headType"	id="headTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('head'); setCookie('headType', 'headTypeMundane')"		checked><label for="headTypeMundane"	>Mundano</label>
+				<input name="headType"	id="headTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('head'); setCookie('headType', 'headTypeMasterwork')">			<label for="headTypeMasterwork"	>Obra maestra</label>
+				<input name="headType"	id="headTypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('head'); setCookie('headType', 'headTypeMagic')">				<label for="headTypeMagic"		>Mágico</label>
+				<input name="headType"	id="headTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('head'); setCookie('headType', 'headTypeArtifact')">			<label for="headTypeArtifact"	>Artefacto</label>
 			</div>
 
 			<p>B</p>
