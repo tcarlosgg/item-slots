@@ -1,15 +1,52 @@
+<!DOCTYPE html>
 <html>
 	<head>
-
+		<title>Equipamiento de ...</title>
+		<link rel="stylesheet" href="styles.css">
+		<script src="equip.js" defer></script>
 	</head>
-	<body style="background-color: red">
-		<div style="background-color: lightblue; display:flex">
-			<div style="background-color: pink; width:50%">
-				<img style="width:320px; image-rendering: pixelated;" src="base.png" />
+
+	<body onload="updateAll()">
+
+		<div class="left">
+			<div class="frame">
+				<div id="baseBody" class="img" style="background-image:url(images/body.png)"></div>
 			</div>
-			<div style="background-color: chartreuse; width:50%">
-				<img style="width:320px; image-rendering: pixelated;" src="base.png" />
-			</div>
+			<div id="boots" class="img" style="background-image:url(images/boots.png)"></div>
+			<div id="shirt" class="img" style="background-image:url(images/shirt.png)"></div>
+			<div id="armor" class="img" style="background-image:url(images/armor.png)"></div>
+			<div id="belt" class="img" style="background-image:url(images/belt.png)"></div>
+			<div id="arms" class="img" style="background-image:url(images/arms.png)"></div>
+			<div id="hands" class="img" style="background-image:url(images/hands.png)"></div>
+			<div id="ring1" class="img" style="background-image:url(images/ring1.png)"></div>
+			<div id="ring2" class="img" style="background-image:url(images/ring2.png)"></div>
+			<div id="neck" class="img" style="background-image:url(images/neck.png)"></div>
+			<div id="cape" class="img" style="background-image:url(images/cape.png)"></div>
+			<div id="head" class="img" style="background-image:url(images/head.png)"></div>
+			<div id="eyes" class="img" style="background-image:url(images/eyes.png)"></div>
 		</div>
+
+		<div class="right">
+			<div class="itemBox">
+				<p class="itemTitle">Cabeza</p>
+				<input id="headName" class="itemName" type="text" maxlength="23" placeholder="Objeto" autocomplete="on" onblur="updateEquip('head')"><br>
+				<textarea id="headDesc" class="itemDesc" maxlength="196" placeholder="Descripción"></textarea><br>
+				<input name="headType"	id="headTypeMundane"	class="itemType"	type="radio"	value="0"	onclick="updateEquip('head')"	checked><label for="headTypeMundane"	>Mundano</label>
+				<input name="headType"	id="headTypeMasterwork"	class="itemType"	type="radio"	value="1"	onclick="updateEquip('head')">			<label for="headTypeMasterwork"	>Obra maestra</label>
+				<input name="headType"	id="headTypeMagic"		class="itemType"	type="radio"	value="2"	onclick="updateEquip('head')">			<label for="headTypeMagic"		>Mágico</label>
+				<input name="headType"	id="headTypeArtifact"	class="itemType"	type="radio"	value="3"	onclick="updateEquip('head')">			<label for="headTypeArtifact"	>Artefacto</label>
+			</div>
+
+			<p>B</p>
+			<p>B</p>
+			<p>B</p>
+			<p>B</p>
+			<p>B</p>
+			<p>B</p>
+			<p>B</p>
+			<p>B</p>
+			<p>B</p>
+		</div>
+
 	</body>
 </html>
