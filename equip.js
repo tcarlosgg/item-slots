@@ -54,7 +54,7 @@ function updateEquip(equip){
 
 
 function setCookie(cookieName, radioId = cookieName){
-    if (document.getElementById(cookieName).value != "" || radioId != cookieName){
+    if (radioId != cookieName || document.getElementById(cookieName).value != ""){
         const expiry = new Date();
         expiry.setTime(expiry.getTime() + (3*365*30*24*60*60*1000));
         
