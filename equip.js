@@ -1,5 +1,5 @@
 function updateAll(){
-    document.getElementById("headName").value = "headName";
+    document.getElementById("headName").value = getCookie("headName");
     updateEquip("head");
 }
 
