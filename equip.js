@@ -1,5 +1,5 @@
 function updateAll(){
-    updateValues(head)
+    updateValues("head");
 }
 
 function updateValues(equip){
