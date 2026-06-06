@@ -11,6 +11,10 @@ function updateAll(){
     updateValues("ring2");
     updateValues("belt");
     updateValues("boots");
+    updateValues("weapon");
+    updateValues("offhand");
+    updateValues("other1");
+    updateValues("other2");
     skinColor(parseInt(getCookie("skin")));
 }
 
@@ -41,6 +45,10 @@ function updateValues(equip){
 }
 
 function updateEquip(equip){
+    if (equip == "weapon" || equip == "offhand" || equip == "other1" || equip == "other2"){ // Debug content.
+        return;                                                                             // Prevents page from breaking
+    }                                                                                       // due to non-existent art assets
+
     if (document.getElementById(equip+"Name").value != ""){
         document.getElementById(equip).style.display = "block";
         switch (document.querySelector("input[name='"+equip+"Type']:checked").value){
